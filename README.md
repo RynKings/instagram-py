@@ -39,4 +39,5 @@ Zero Cool / [@crash-override404](https://github.com/crash-override404)
 ## Support
 Hello World and Friends  
 Mrezkys / [@mrezkys](https://github.com/mrezkys)  
+Tanduri a.k.a HelloTan / [@hellotan](https://github.com/hellotan)
 And others.

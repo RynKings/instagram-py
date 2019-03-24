@@ -1,4 +1,9 @@
-from instagram_private_api import Client, ClientError
+try:
+	from instagram_private_api import Client, ClientError
+except:
+	python = sys.executable
+	os.system(f'{python} install git+https://git@github.com/ping/instagram_private_api.git --upgrade --force-reinstall')
+	os.execl(python, python, *sys.argv)
 
 class Auth(object):
 	isLogin = False

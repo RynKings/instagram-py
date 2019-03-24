@@ -33,9 +33,10 @@ $ python3 helloworld.py
 [HelloWorld](https://discord.gg/5jqbutB)
 
 ## Author
-Ryns / [@rynkings](https://github.com/rynkings)
+Ryns / [@rynkings](https://github.com/rynkings)  
 Zero Cool / [@crash-override404](https://github.com/crash-override404)  
 
 ## Support
-Hello World and Friends
-Mrezkys / [@mrezkys](https://github.com/mrezkys)
+Hello World and Friends  
+Mrezkys / [@mrezkys](https://github.com/mrezkys)  
+And others.

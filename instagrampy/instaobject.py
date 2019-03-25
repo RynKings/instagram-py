@@ -38,52 +38,38 @@ class Object(object):
     	#Not Finish
 
     @loggedIn
+    def getMediaIdByURL(self, url):
+        code = re.search(r'instagram.com/p/(.*?)/', url + '/').group(1)
+        url = requests.get(f'https://www.instagram.com/p/{code}/')
+        soup = BeautifulSoup(url.text, 'lxml')
+        a = soup.find('body')
+        b = a.find('script')
+        c = b.text.strip().replace('window._sharedData =', '').replace(';', '')
+        d = json.loads(c)
+        f = d['entry_data']['PostPage'][0]['graphql']['shortcode_media']['id']
+        return f
+
+    @loggedIn
     def likePost(self, url='', media_id='', code=''):
         if url:
-            code = re.search(r'instagram.com/p/(.*?)/', url + '/').group(1)
-            url = requests.get(f'https://www.instagram.com/p/{code}/')
-            soup = BeautifulSoup(url.text, 'lxml')
-            a = soup.find('body')
-            b = a.find('script')
-            c = b.text.strip().replace('window._sharedData =', '').replace(';', '')
-            d = json.loads(c)
-            f = d['entry_data']['PostPage'][0]['graphql']['shortcode_media']['id']
+            f = self.getMediaIdByURL(url)
             r = self.auth.post_like(f)
         if media_id:
             r = self.auth.post_like(media_id)
         if code:
-            url = requests.get(f'https://www.instagram.com/p/{code}/')
-            soup = BeautifulSoup(url.text, 'lxml')
-            a = soup.find('body')
-            b = a.find('script')
-            c = b.text.strip().replace('window._sharedData =', '').replace(';', '')
-            d = json.loads(c)
-            f = d['entry_data']['PostPage'][0]['graphql']['shortcode_media']['id']
+            f = self.getMediaIdByURL(f'https://www.instagram.com/p/{code}/')
             r = self.auth.post_like(f)
         return r
 
     @loggedIn
     def commentPost(self, text, url='', media_id='', code=''):
         if url:
-            code = re.search(r'instagram.com/p/(.*?)/', url + '/').group(1)
-            url = requests.get(f'https://www.instagram.com/p/{code}/')
-            soup = BeautifulSoup(url.text, 'lxml')
-            a = soup.find('body')
-            b = a.find('script')
-            c = b.text.strip().replace('window._sharedData =', '').replace(';', '')
-            d = json.loads(c)
-            f = d['entry_data']['PostPage'][0]['graphql']['shortcode_media']['id']
+            f = self.getMediaIdByURL(url)
             r = self.auth.post_comment(f, text)
         if media_id:
             r = self.auth.post_comment(media_id, text)
         if code:
-            url = requests.get(f'https://www.instagram.com/p/{code}/')
-            soup = BeautifulSoup(url.text, 'lxml')
-            a = soup.find('body')
-            b = a.find('script')
-            c = b.text.strip().replace('window._sharedData =', '').replace(';', '')
-            d = json.loads(c)
-            f = d['entry_data']['PostPage'][0]['graphql']['shortcode_media']['id']
+            f = self.getMediaIdByURL(f'https://www.instagram.com/p/{code}/')
             r = self.auth.post_comment(f, text)
         return r
 

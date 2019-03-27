@@ -121,6 +121,7 @@ class Talk(object):
 	@loggedIn
 	def blockStorySeens(self, username):
 		user_id = self.getUserId(username)
+		return self.auth.block_friend_reel(user_id)
 
 	@loggedIn
 	def deleteFollowers(self, username):

@@ -33,7 +33,7 @@ class Object(object):
         return result
 
     @loggedIn
-    def postPhoto(self, path, size, caption='', disableComment=False):
+    def postPhoto(self, path, size=(1024, 683), caption='', disableComment=False):
     	return self.auth.post_photo(path, size, caption=caption, disable_comment=disableComment)
     	#Not Finish
 

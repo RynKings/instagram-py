@@ -1,6 +1,6 @@
 from .instaclient import INSTAGRAM
 
-__copyright__       = 'Copyright 2018 by Ryns'
+__copyright__       = 'Copyright 2019 by Ryns'
 __version__         = '1.0'
 __author__          = 'Ryns'
 __author_email__    = 'ryns@ryns.site'

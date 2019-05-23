@@ -34,7 +34,11 @@ $ python3 helloworld.py
 
 ## Author
 Ryns / [@rynkings](https://github.com/rynkings)  
-Zero Cool / [@crash-override404](https://github.com/crash-override404)  
+Zero Cool / [@crash-override404](https://github.com/crash-override404)
+
+## Thanks to
+
+Instagram Private API / [@InstagramPrivateAPI](https://github.com/ping/instagram_private_api)
 
 ## Support
 Hello World and Friends  

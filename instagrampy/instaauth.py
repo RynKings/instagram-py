@@ -17,7 +17,7 @@ class Auth(object):
 		self.isLogin = True
 
 	def login(self, username, password):
-		self.cl = Client(username, password)
+		self.cl = Client(username, password, cookie=self.cookie, settings=self.settings, on_login=self.on_login)
 		self.token = self.cl.csrftoken
 		self.userAgent = self.cl.user_agent
 		self.cookie = self.cl.cookie_jar

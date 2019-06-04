@@ -1,9 +1,7 @@
-from instagrampy import *
-import sys
+from important import *
 
 username = ''
 password = ''
 
 cl = INSTAGRAM(username, password)
-profile = cl.profile
-print(profile)
+print(cl.profile)

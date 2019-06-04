@@ -1,7 +1,7 @@
 from important import *
 
-username = ''
-password = ''
+username = 'rynsscrape'
+password = 'blackswordsman'
 
-cl = INSTAGRAM(username, password)
-print(cl.profile)
+cl = INSTAGRAM(username, password, settings=True)
+#change True to get your settings_session.json

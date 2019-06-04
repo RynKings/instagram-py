@@ -3,6 +3,7 @@ from .instaauth import Auth
 from .instaobject import Object
 
 import sys
+import os
 
 class INSTAGRAM(Talk, Auth, Object):
 
@@ -18,7 +19,7 @@ class INSTAGRAM(Talk, Auth, Object):
 		:return:
 		"""
 		self.cookie = kwargs.pop('cookie', None)
-		self.settings = kwargs.pop('settings', {})
+		self.settings = kwargs.pop('settings', True)
 		self.on_login = kwargs.pop('on_login', None)
 		Auth.__init__(self)
 		if not (username and password):
@@ -30,7 +31,7 @@ class INSTAGRAM(Talk, Auth, Object):
 	def __initAll(self):
 
 		self.profile = self.auth.current_user()['user']
-		self.user_id     = self.auth.authenticated_user_id
+		self.user_id = self.auth.authenticated_user_id
 
 		Object.__init__(self)
 		Talk.__init__(self)

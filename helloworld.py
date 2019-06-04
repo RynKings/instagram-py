@@ -4,4 +4,4 @@ username = ''
 password = ''
 
 cl = INSTAGRAM(username, password, settings=False)
-#change True to get your settings_session.json
+#change True to use your session
